@@ -1,0 +1,5 @@
+module dpdcrash;
+
+public type message = unit {
+    payload: bytes &eod;
+};

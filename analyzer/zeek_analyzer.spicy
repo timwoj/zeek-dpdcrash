@@ -1,0 +1,12 @@
+module Zeek_dpdcrash;
+
+import dpdcrash;
+import zeek;
+
+on dpdcrash::message::%done {
+ zeek::confirm_protocol();
+}
+
+on dpdcrash::message::%error {
+ zeek::reject_protocol("error while parsing dpdcrash message record");
+}

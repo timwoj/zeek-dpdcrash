@@ -1,0 +1,8 @@
+protocol analyzer spicy::dpdcrash over TCP:
+    parse with dpdcrash::message,
+    port 10002/tcp;
+
+import dpdcrash;
+import Zeek_dpdcrash;
+
+on dpdcrash::message -> event dpdcrash::message($conn, $is_orig, self.payload);
