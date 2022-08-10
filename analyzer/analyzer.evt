@@ -1,6 +1,6 @@
 protocol analyzer spicy::dpdcrash over TCP:
     parse with dpdcrash::message,
-    port 10002/tcp;
+    port 10001/tcp;
 
 import dpdcrash;
 import Zeek_dpdcrash;
